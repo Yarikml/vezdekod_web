@@ -28,7 +28,9 @@ const Home = () => {
         <div>
             <Input placeholder={'Enter grid name'} onChange={(event) => setText(event.target.value)} value={text}/>
             <Button type={'primary'} onClick={() => addGrid()}>Add Grid +</Button>
-            {grids.map(grid => <GridItem key={grid.name} id={grid.id} name={grid.name} />)}
+            <div className="grid">
+                {grids.map(grid => <GridItem key={grid.name} id={grid.id} name={grid.name} />)}
+            </div>
         </div>
     )
 }

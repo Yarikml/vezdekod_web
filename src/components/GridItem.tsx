@@ -7,6 +7,7 @@ import {
     useParams
     // @ts-ignore
 } from "react-router-dom";
+import {Button} from "antd";
 interface Props {
     id: number;
     name: string
@@ -14,12 +15,15 @@ interface Props {
 
 const GridItem = (props: Props) => {
     return (
-        <div>
+        <div className="grid-item">
+            <div>
+                {props.name}
+            </div>
             <Link to={`/grid/${props.id}`}>
-                Go to grid
+                <Button type={"default"}>
+                    Go to grid
+                </Button>
             </Link>
-            {props.id}
-            {props.name}
         </div>
     )
 }
